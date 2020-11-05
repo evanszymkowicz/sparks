@@ -77,7 +77,7 @@ const ResourceView = (props: Props) => {
             <SeeMore to="/job-seekers">See All Information</SeeMore>
           )}
           {post.frontmatter.resourceType == "entrepreneur" && (
-            <SeeMore to="/employed">See All Information</SeeMore>
+            <SeeMore to="/entrepreneurs">See All Information</SeeMore>
           )}
 
           <SimilarContentWrap>

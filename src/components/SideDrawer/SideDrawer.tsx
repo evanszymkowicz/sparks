@@ -16,6 +16,7 @@ const SideDrawerNew = (props: Props) => {
   const handleClick = () => {
     props.toggleMenu()
   }
+
   const transitions = useTransition(props.showMenu, null, {
     from: { transform: "translateX(-100%)" },
     enter: { transform: "translateX(0%)" },
@@ -40,7 +41,7 @@ const SideDrawerNew = (props: Props) => {
 
             <Logo>
               <Link to="/" title={"earner"}>
-                <H2>sparks</H2>
+                <H2>earner</H2>
               </Link>
             </Logo>
             <Ul>

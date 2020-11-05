@@ -4,7 +4,7 @@ import * as _ from "lodash"
 import markdownQuery from "./query-blog-posts"
 import markdownEmployee from "./query-employee"
 import markdownJobSeekers from "./query-jobSeeker"
-import markdownemployed from "./query-employed"
+import markdownEntrepreneurs from "./query-entrepreneurs"
 import markdownResource from "./query-resource"
 const { paginate } = require("gatsby-awesome-pagination") // it works
 
@@ -34,7 +34,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
 
   const allMarkdown = await graphql(markdownQuery)
   const allMarkdownEmployee = await graphql(markdownEmployee)
-  const allMarkdownemployed = await graphql(markdownemployed)
+  const allMarkdownEntrepreneurs = await graphql(markdownEntrepreneurs)
   const allMarkdownJobSeekers = await graphql(markdownJobSeekers)
   const allMarkdownResource = await graphql(markdownResource)
 
@@ -44,7 +44,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
 
   const posts = allMarkdown.data.allMarkdownRemark.edges
   const employee = allMarkdownEmployee.data.allMarkdownRemark
-  const employed = allMarkdownemployed.data.allMarkdownRemark
+  const entrepreneurs = allMarkdownEntrepreneurs.data.allMarkdownRemark
   const jobSeekers = allMarkdownJobSeekers.data.allMarkdownRemark
   const resourceView = allMarkdownResource.data.allMarkdownRemark.edges
 
@@ -106,20 +106,20 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
     })
   })
 
-  const employedPerPage = 20
+  const entrepreneursPerPage = 20
 
   const entreNumPages = Math.ceil(
-    employed.totalCount / employedPerPage
+    entrepreneurs.totalCount / entrepreneursPerPage
   )
   Array.from({ length: entreNumPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/employed` : `/employed/${i + 1}`,
+      path: i === 0 ? `/entrepreneurs` : `/entrepreneurs/${i + 1}`,
       component: path.resolve(
-        `./src/templates/ResourcePages/employed.tsx`
+        `./src/templates/ResourcePages/entrepreneurs.tsx`
       ),
       context: {
-        limit: employedPerPage,
-        skip: i * employedPerPage,
+        limit: entrepreneursPerPage,
+        skip: i * entrepreneursPerPage,
         currentPage: i + 1,
         entreNumPages
       }

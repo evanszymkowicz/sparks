@@ -7,7 +7,7 @@ export class RelatedContentFactory {
   category: null | string
   tags?: string[] | null[]
   constructor(articles: any[], currentArticleSlug: string) {
-    // exclude the current article from the list
+    // (2.) Don't include the current article in articles list
     this.articles = articles.filter(
       aArticle => aArticle.frontmatter.slug !== currentArticleSlug
     )
@@ -35,7 +35,7 @@ export class RelatedContentFactory {
 
   getArticles() {
     const { category, tags, articles, maxArticles } = this
-    // use an identity to keep track
+    // (5.) We use an Identity Map to keep track of score
     interface Identity {
       [index: string]: {
         article: any
@@ -48,6 +48,13 @@ export class RelatedContentFactory {
       console.error("SimilarArticlesFactory: Tags not provided, use setTags().")
       return []
     }
+
+    // if (!!category === false) {
+    //   console.error(
+    //     "SimilarArticlesFactory: Category not provided, use setCategory()."
+    //   )
+    //   return []
+    // }
 
     function getSlug(article: any) {
       return article.frontmatter.slug as string
@@ -63,12 +70,17 @@ export class RelatedContentFactory {
         }
       }
     }
-    // for category matched add 2 points
+
+    // (7.) For category matches, we add 2 points
     function addCategoryPoints(article: any, category: string) {
-    
+      // const categoryPoints = 2
+      // const slug = getSlug(article)
+      // if (article.category === category) {
+      //   identityMap[slug].points += categoryPoints
+      // }
     }
 
-    // for tags matched add 1 point
+    // (8.) For tags matches, we add 1 point
     function addTagsPoints(article: any, tags?: string[] | null[]) {
       const tagPoint = 1
       const slug = getSlug(article)
@@ -84,18 +96,21 @@ export class RelatedContentFactory {
       return Object.keys(identityMap).map(slug => identityMap[slug])
     }
 
-    // map over all articles, add to map and add points
+    // (6.) Map over all articles, add to map and add points
     articles.forEach(article => {
       addToMap(article)
       // addCategoryPoints(article, category) // We don't (yet) have categories
       addTagsPoints(article, tags)
     })
-    // convert the identity map to an array
+
+    // (9.) Convert the identity map to an array
     const arrayIdentityMap = getIdentityMapAsArray()
-    // use a lodash utility function to sort them
-    // by points from greatest to least
+
+    // (10.) Use a lodash utility function to sort them
+    // by points, from greatest to least
     const similarArticles = orderBy(arrayIdentityMap, ["points"], ["desc"])
-    // (take the max number articles requested
+
+    // (11. Take the max number articles requested)
     return similarArticles.splice(0, maxArticles)
   }
 }

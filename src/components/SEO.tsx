@@ -24,13 +24,13 @@ interface HelmetProps {
 
 const seoURL = (path?: string) => `https://www.earner.ai${path}`
 
-// Twitter requires https to prepend all paths.
+// Twitter requires https to prepend any paths.
 const addHttps = (path: string | undefined) => {
   if (path?.substring(0, 5) === "https") return path
   return `https:${path}`
 }
 
-const seoDescription = `Your number one resource to the Washington, D.C. employment community.`
+const seoDescription = `Your number one resource in the employment community.`
 
 const getMetaTags = ({
   title,
@@ -60,7 +60,7 @@ const getMetaTags = ({
     },
     {
       name: "theme-color"
-      // content: colors.radiantBlue,
+  
     },
     { itemprop: "name", content: `${title} – Earner` },
     { itemprop: "description", content: description },

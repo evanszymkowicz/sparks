@@ -8,11 +8,10 @@ interface Props {
   title: string
 }
 
- 
 const links = [
   { path: "employee", title: "Employees" },
   { path: "job-seekers", title: "Job Seekers" },
-  { path: "employed", title: "employed" }
+  { path: "entrepreneurs", title: "Entrepreneurs" }
 ]
 
 const ResourceLinks = (props: Props) => {

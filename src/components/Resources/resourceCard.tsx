@@ -69,11 +69,7 @@ const Content = styled.p`
     text-align: justify;
   } */
 `
-// const Title = styled.h2`
-//   @media ${deviceMin.mobileS} {
-//     text-align: center;
-//   }
-// `
+
 const Category = styled.small`
   margin-bottom: 15px;
 `

@@ -18,7 +18,7 @@ const AuthorCard = (props: Props) => {
           fluid={props.avatar.fluid as FluidObject}
         />
         <RightSide>
-          <WrittenBy>WRITTEN BY</WrittenBy>
+          <WrittenBy>Written By</WrittenBy>
           <Author>{props.author}</Author>
           <Description>{props.description}</Description>
         </RightSide>

@@ -1,7 +1,7 @@
-export const markdownemployed = `
+export const markdownEntrepreneurs = `
     {
         allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/resources/employed/" } }
+        filter: { fileAbsolutePath: { regex: "/content/resources/entrepreneurs/" } }
       ) {
         totalCount
         edges {
@@ -26,4 +26,4 @@ export const markdownemployed = `
     }
   `
 
-export default markdownemployed
+export default markdownEntrepreneurs

@@ -17,7 +17,7 @@ const Footer = () => {
       <Column>
         <Card>
           <Logo to="/">
-            <h3>Sparks</h3>
+            <h3>sparks</h3>
           </Logo>
         </Card>
         <Card>
@@ -25,11 +25,11 @@ const Footer = () => {
         </Card>
         <Card>
           <h3>Connect</h3>
-          <OutboundLink href="https://github.com/Earner-ai/" target="_new">
+          <OutboundLink href="https://github.com/evanszymkowicz/" target="_new">
             <GitHubSocial />
           </OutboundLink>
 
-          <OutboundLink href="https://twitter.com/earner_ai" target="_new">
+          <OutboundLink href="https://twitter.com/" target="_new">
             <TwitterSocial />
           </OutboundLink>
         </Card>

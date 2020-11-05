@@ -1,17 +1,17 @@
 {
   "index": {
-    "title": "Helping talent find work that they will love.",
-    "description": "Learn how Sparks Group works for you.",
+    "title": "Learn how to survive in the job market.",
+    "description": "Earner is the best resource for pointing out how to survivie in the job market. We highlight government support for the unemployed, startup grants for entrepreneurs, and discuss employment contracts for the employed.",
     "path": "/"
   },
   "blog": {
     "title": "Blog",
-    "description": "Follow the Sparks blog to learn about new product features, company news, and employment stories like yours",
+    "description": "Follow the Earner blog to learn about new product features, company news, and employment stories like yours",
     "path": "/blog"
   },
   "employed": {
     "title": "For Employees",
-    "description": "Resources for employers looking for talent who will stay with them.",
+    "description": "Learn your rights as an employee in Finland. Here you will learn about how to collect unpaid salary, employment contracts,labor unions, and more.",
     "path": "/employed"
   }
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/SEO"
 import { Container, Resources } from "../../components/Primitives"
@@ -7,12 +7,18 @@ import meta from "../../../content/data/meta.json"
 import ResourceCard from "../../components/Resources/resourceCard"
 import ResourceHero from "../../components/Resources/resourceHero"
 import ResourceLinks from "../../components/Resources/resourceLinks"
+import Img from "gatsby-image"
 
-const Employed = ({ data }: any) => {
-  const pageTitle = "For new Employees"
-  const keywords = data.allMarkdownRemark.edges.map((employed: any) => {
-    return employed.node.frontmatter.keywords
+const EmployeedTemplate = ({ data, pageContext }: any) => {
+  // const EmployeedTemplate = ({ props }: any) => {
+  const keywords = data.allMarkdownRemark.edges.map((employee: any) => {
+    return employee.node.frontmatter.keywords
   })
+  // const { currentPage } = pageContext
+
+  // const pageTitle = {`Employees (${currentPage})`}
+  const pageTitle = "Employees"
+
   return (
     <Layout>
       <SEO
@@ -21,7 +27,7 @@ const Employed = ({ data }: any) => {
         keywords={keywords}
       />
       <ResourceHero
-        color="RGBA(2, 38, 64, .8)"
+        color="RGBA(141, 211, 217, .8)"
         title={pageTitle}
         subTitle="Read, learn, & stay informed."
         image={data?.file.childImageSharp.fluid}
@@ -29,33 +35,52 @@ const Employed = ({ data }: any) => {
 
       <Container>
         <ResourceLinks title={pageTitle} />
-
         <Resources>
           {data.allMarkdownRemark.edges.map((post: any) => (
             <ResourceCard
               key={post.node.id}
               title={post.node.frontmatter.title}
-              content={post.node.internal.content}
+              content={post.node.excerpt}
               tags={post.node.frontmatter.tags}
               html={post.node.excerpt}
               source={post.node.frontmatter.source}
               slug={post.node.frontmatter.slug}
+              type={post.node.frontmatter.resourceType}
             />
           ))}
         </Resources>
+        <ul>
+          {Array.from({ length: pageContext.employeeNumPages }).map(
+            (item, i) => {
+              const index = i + 1
+              const link = index === 1 ? "/employee" : `/employee/${index}`
+
+              // if there isn't more than one page, hide the pagination
+              if (index > 1) {
+                return (
+                  <li key={index}>
+                    {pageContext.currentPage === index ? (
+                      <span>{index}</span>
+                    ) : (
+                      <a href={link}>{index}</a>
+                    )}
+                  </li>
+                )
+              }
+            }
+          )}
+        </ul>
       </Container>
     </Layout>
   )
 }
 
-export default Employed
+export default EmployeedTemplate
 
-export const EmployedTemplateQuery = graphql`
-  query EmployedTemplateQuery($skip: Int!, $limit: Int!) {
+export const EmployeedTemplateQuery = graphql`
+  query EmployeedTemplateQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/content/resources/employed/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/content/resources/employed/" } }
       limit: $limit
       skip: $skip
     ) {
@@ -73,6 +98,7 @@ export const EmployedTemplateQuery = graphql`
             date
             source
             keywords
+            resourceType
           }
           internal {
             content
@@ -80,7 +106,7 @@ export const EmployedTemplateQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "books.png" }) {
+    file(relativePath: { eq: "waiter.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid

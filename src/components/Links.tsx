@@ -1,6 +1,6 @@
 export const links = [
-  { path: "employee", title: "For Employees" },
-  { path: "job-seekers", title: "For Job Seekers" },
-  { path: "employed", title: "For employed" },
+  { path: "employee", title: "Employees" },
+  { path: "job-seekers", title: "Job Seekers" },
+  { path: "entrepreneurs", title: "Hiring Managers" },
   { path: "blog", title: "Blog" },
 ]

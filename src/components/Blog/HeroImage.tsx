@@ -8,7 +8,7 @@ const BlogHeroImage = () => {
   const data = useStaticQuery(graphql`
     query BlogHeroImgQuery {
       allMarkdownRemark(
-        # sort: { order: DESC }
+        # sort in descending order
         limit: 1
         filter: { fileAbsolutePath: { regex: "/content/blog/" } }
       ) {

@@ -5,6 +5,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Image from "../image"
+// import { Icon } from "./Icons"
 import { SubmitBtn, Input, deviceMax } from "../Primitives"
 
 const NewsLetterForm = () => {

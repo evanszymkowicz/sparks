@@ -1,9 +1,9 @@
 {
-  "name": "Earner.ai",
+  "name": "sparks group",
   "private": true,
-  "description": "Earner.ai Website",
+  "description": "Concept website",
   "version": "1.0.0",
-  "author": "Evan Szymkowicz <kayla.m.gordon@gmail.com>",
+  "author": "Evan Szymkowicz",
   "dependencies": {
     "@testing-library/cypress": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",

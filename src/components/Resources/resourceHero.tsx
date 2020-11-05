@@ -24,7 +24,7 @@ const ResourceHero = (props: Props) => {
         <Title
           style={{
             color:
-              props.title == "employed" ? "#fff" : "hsla(0, 0%, 0%, 1)"
+              props.title == "Entrepreneurs" ? "#fff" : "hsla(0, 0%, 0%, 1)"
           }}
         >
           {props.title}

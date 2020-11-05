@@ -9,11 +9,10 @@ keywords:
   [
     "Salary",
     "Pay Security",
-    "TE Palvelut",
-    "how to get a job in finland",
-    "how to find a job in finland",
-    "my finnish job stopped paying me",
-    "how to get money from my finnish job",
+    "how to get a job in tech",
+    "how to find a job in tech",
+    "my job stopped paying me",
+    "how to get more money from my job",
     "How can I collect unpaid salary from my employer?",
   ]
 source: ["TE Palvelut"]

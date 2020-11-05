@@ -4,6 +4,7 @@ import SideDrawer from "../SideDrawer/SideDrawer"
 
 const SideMenu = () => {
   const [showMenu, setShowMenu] = useState(false)
+
   const toggleMenu = () => {
     setShowMenu(!showMenu)
   }

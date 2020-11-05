@@ -62,7 +62,7 @@ const NewsLetterForm = (props: Props) => {
             </SubmitBtn>
           </EmailForm>
         ) : (
-          <ThanksForSubscribing>Thanks for subscribing!</ThanksForSubscribing>
+          <ThanksForSubscribing>Thank you for joining our newsletter!</ThanksForSubscribing>
         )}
       </LeftNews>
       <RightNews>

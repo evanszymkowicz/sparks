@@ -24,19 +24,20 @@ const IndexPage = ({ data }: any) => (
       <Overlay>
         <HeroContainer>
           <HeroText>
-            <h1>Serving companies and the employees of the Washington, D.C. area.</h1>
-            {/* <h3>
+          <h1>Serving companies and the employees of the Washington, D.C. area.</h1>
+            <h3>
               Learn about the services available to you as a job seeker,
-              employee or independent professional.
-            </h3> */}
+              employee or hiring manager.
+            </h3>
           </HeroText>
         </HeroContainer>
       </Overlay>
     </HeroWrap>
+
     <Container>
-      <H1_Attn>Stay informed with Sparks</H1_Attn>
+      <H1_Attn>Stay informed with Sparks!</H1_Attn>
       <P>
-        Learn about services avalible to you.
+      Learn about services avalible to you.
       </P>
 
       <Resources>
@@ -57,19 +58,20 @@ const IndexPage = ({ data }: any) => (
 
       <H1>For the people, by the people</H1>
       <ContentContainer style={{ margin: "0px auto 50px auto" }}>
-        <P>
+      <P>
           Sparks was created by people who have struggled with the job market
           and lack of knowledge regarding resources available to them. At
           Sparks, we connect elite talent with the best opporotunities.
         </P>
         <P>
-          We believe in community. <b> Sparks is open-source for this reason.</b>
+          We believe in community. <b> This site is open-source for this reason.</b>
           Connect with the author and creator of this site for more information.
         </P>
         <GitHubLink href="https://github.com/evanszymkowicz" target="_new">
           <GitHub />
         </GitHubLink>
       </ContentContainer>
+      {/* <NewsLetter image={data.newsImage.childImageSharp.fluid} /> */}
     </Container>
   </Layout>
 )
@@ -114,7 +116,7 @@ export const IndexQuery = graphql`
 `
 
 const HeroWrap = styled.div`
-  background-image: url("images/office-phone.png");
+  background-image: url("images/office-phone.jpg");
   padding: 0;
   position: relative;
   background-size: cover;
