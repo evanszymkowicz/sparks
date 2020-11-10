@@ -29,7 +29,7 @@ const EmployeedTemplate = ({ data, pageContext }: any) => {
       <ResourceHero
         color="RGBA(141, 211, 217, .8)"
         title={pageTitle}
-        subTitle="Read, learn, & stay informed."
+        subTitle="Read, learn and stay informed"
         image={data?.file.childImageSharp.fluid}
       />
 

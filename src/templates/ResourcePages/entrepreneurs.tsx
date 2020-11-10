@@ -23,7 +23,7 @@ const Entrepreneurs = ({ data }: any) => {
       <ResourceHero
         color="RGBA(2, 38, 64, .8)"
         title={pageTitle}
-        subTitle="Read, learn, & stay informed."
+        subTitle="Read, learn and stay informed"
         image={data?.file.childImageSharp.fluid}
       />
 

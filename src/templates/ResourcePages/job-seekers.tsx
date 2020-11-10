@@ -24,7 +24,7 @@ const JobSeekerTemplate = ({ data }: any) => {
       <ResourceHero
         color="RGBA(255, 204, 204, 0.8)"
         title={pageTitle}
-        subTitle="Read, learn, & stay informed."
+        subTitle="Read, learn and stay informed"
         image={data?.file.childImageSharp.fluid}
       />
 
